@@ -19,6 +19,14 @@ QT += gui core widgets opengl xml x11extras
 TARGET = ./bin/jag
 TEMPLATE = app
 
+unix: {
+    target.path = /usr/games/bin/
+    INSTALLS += target
+    datas.path = /usr/share/games/jag
+    datas.files = data
+    INSTALLS += datas
+}
+
 LIBS += -lGL -lX11 -lSDL2 -lSDL2_mixer -lpthread -lXrandr
 
 OBJECTS_DIR += src
